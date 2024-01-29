@@ -45,16 +45,16 @@ public:
 		}
 	}
 	std::string getAddress() {
-		address;								//outputs current address
+		return address;								//outputs current address
 	}
 	std::string getCity() {
-		city;									//outputs current address
+		return city;									//outputs current address
 	}
 	std::string getState() {
-		state;									//outputs current state
+		return state;									//outputs current state
 	}
-	std::string getZip() {
-		zipcode;								//outputs current zipcode
+	int getZip() {
+		return zipcode;								//outputs current zipcode
 	}
 	void print() const {						//prints address, city, state, and zipcode
 		std::cout << address << std::endl << city << " " << state << ", " << zipcode << std::endl;
