@@ -130,6 +130,7 @@
     <ClCompile Include="addressType.cpp" />
     <ClCompile Include="CSC-223-OnlineAddressBook.cpp" />
     <ClCompile Include="dateType.cpp" />
+    <ClCompile Include="Module.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="addressType.h" />

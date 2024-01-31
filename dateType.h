@@ -1,93 +1,115 @@
+#pragma once
+
+#ifndef dateT
+#define dateT
+
 #include <iostream>
 
 class dateType {
 public:
-	dateType() {	//constructor
-		month = 1;
-		day = 1;
-		year = 1900;
+	dateType() {										//constructor
+		month = 1;										//sets default month to 1
+		day = 1;										//sets default day to 1
+		year = 1900;									//sets default year to 1900
 	}
-	void setDate(int M, int D, int Y) {
+	dateType(int D, int M, int Y) {						
+		setDate(D, M, Y);								//plugs input date into setDate
+	}
+	void setDate(int M, int D, int Y) {					
 
-		if (M >= 1 && M <= 12) {
-			month = M;
+		if (M >= 1 && M <= 12) {						//checks if input month falls between 1 and 12
+			month = M;									//sets month as input value
 		}
-		else {
-			std::cerr << "Invalid Month, please enter a value between 1 and 12";
+		else {											//outputs error message and resets month value
+			std::cerr << "Invalid Month, please enter a value between 1 and 12" << std::endl;
 			month = 1;
 		}
-		if (M == 4, M == 6, M == 11) {
-			if (D >= 1 && D <= 30) {
-				day = D;
+		if (M == 4 || M == 6 || M == 11) {				//checks if input month is 4, 6, or 11
+			if (D >= 1 && D <= 30) {					//checks if input day falls between 1 and 30
+				day = D;								//sets day as input value
 			}
-			else {
-				"Invalid Day, the selected month has 30 days";
+			else {										//outputs error message and resets day value
+				std::cerr << "Invalid Day, the selected month has 30 days" << std::endl;
 				day = 1;
 			}
 		}
 		else {
-			if (M == 2) {
-				if (isLeapYear(Y) == true) {
-					if (D >= 0 && D <= 29) {
-						day = D;
+			if (M == 2) {								//checks if input month is 2
+				if (isLeapYear(Y) == true) {			//checks if leap year is true
+					if (D >= 1 && D <= 29) {			//checks if input day falls between 1 and 29
+						day = D;						//sets day as input value
 					}
-					else {
-						"Invalid Day, the selected month has 29 days";
+					else {								//outputs error message and resets day value
+						std::cerr << "Invalid Day, the selected month has 29 days" << std::endl;
 						day = 1;
 					}
 				}
 				else {
-					if (D >= 0 && D <= 28) {
-						day = D;
+					if (D >= 0 && D <= 28) {			//checks if input day falls between 1 and 28
+						day = D;						//sets day as input value
 					}
-					else {
-						"Invalid Day, the selected month has 28 days";
+					else {								//outputs error message and resets day value
+						std::cerr << "Invalid Day, the selected month has 28 days" << std::endl;
 						day = 1;
 					}
 				}
 			}
 			else {
-				if (D >= 1 && D <= 31) {
-					day = D;
+				if (D >= 1 && D <= 31) {				//checks if input day falls between 1 and 31
+					day = D;							//sets day as input value
 				}
-				else {
-					"Invalid Day, the selected month has 31 days";
+				else {									//outputs error message and resets day value
+					std::cerr << "Invalid Day, the selected month has 31 days" << std::endl;
 					day = 1;
 				}
 			}
 		}
-		if (Y >= 1900) {
-			year = Y
+		if (Y >= 1900) {								//checks if input year is after 1899
+			year = Y;									//sets year as input value
 		}
-		else {
-			std::cerr << "Invalid Year, please enter a value of 1900 or above";
+		else {											//outputs error message and resets year value
+			std::cerr << "Invalid Year, please enter a value of 1900 or above" << std::endl;
 			year = 1900;
 		}
 
 	}
+	int getDay() {
+		return day;										//returns current day
+	}
+	int getMonth() {
+		return month;									//returns current month
+	}
+	int getYear() {
+		return year;									//returns current year
+	}
+	void print() {										//prints date in correct format
+		std::cerr << day << "-" << month << "-" << year << endl;
+	}
 	bool isLeapYear(int Y) {
-		if (Y % 4 == 0) {
-			if (Y % 100 == 0) {
-				if (Y % 400 == 0) {
-					return true;
+		if (Y % 4 == 0) {								//checks if the year is evenly divisible by 4
+			if (Y % 100 == 0) {							//checks if the year is evenly divisible by 100
+				if (Y % 400 == 0) {						//checks if the year is evenly divisible by 400
+					return true;						//returns true
 				}
 				else {
-					return false;
+					return false;						//returns false
 				}
 			}
 			else {
-				return true;
+				return true;							//returns true
 			}
 		}
 		else {
-			return false;
+			return false;								//returns false
 		}
 	}
-		
+
 
 private:
 	int month;
 	int day;
 	int year;
 };
+
+#endif
 
