@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include "extPersonType.h"
+
 using namespace std;
+
 int main()
 {
 	cout << "Testing default constructor ... " << endl;

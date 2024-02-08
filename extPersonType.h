@@ -5,6 +5,8 @@
 #include "addressType.h"
 #include "personType.h"
 
+using namespace std;
+
 class extPersonType :personType {
 public:
 	extPersonType() {														//constructor
