@@ -1,9 +1,6 @@
-#pragma once
-
-#ifndef dateT
-#define dateT
-
 #include <iostream>
+
+using namespace std;
 
 class dateType {
 public:
@@ -12,10 +9,10 @@ public:
 		day = 1;										//sets default day to 1
 		year = 1900;									//sets default year to 1900
 	}
-	dateType(int D, int M, int Y) {						
+	dateType(int D, int M, int Y) {
 		setDate(D, M, Y);								//plugs input date into setDate
 	}
-	void setDate(int M, int D, int Y) {					
+	void setDate(int M, int D, int Y) {
 
 		if (M >= 1 && M <= 12) {						//checks if input month falls between 1 and 12
 			month = M;									//sets month as input value
@@ -29,7 +26,7 @@ public:
 				day = D;								//sets day as input value
 			}
 			else {										//outputs error message and resets day value
-				std::cerr << "Invalid Day, the selected month has 30 days" << std::endl;
+				cout << "Invalid Day, the selected month has 30 days" << endl;
 				day = 1;
 			}
 		}
@@ -40,7 +37,7 @@ public:
 						day = D;						//sets day as input value
 					}
 					else {								//outputs error message and resets day value
-						std::cerr << "Invalid Day, the selected month has 29 days" << std::endl;
+						cout << "Invalid Day, the selected month has 29 days" << endl;
 						day = 1;
 					}
 				}
@@ -49,7 +46,7 @@ public:
 						day = D;						//sets day as input value
 					}
 					else {								//outputs error message and resets day value
-						std::cerr << "Invalid Day, the selected month has 28 days" << std::endl;
+						cout << "Invalid Day, the selected month has 28 days" << endl;
 						day = 1;
 					}
 				}
@@ -59,7 +56,7 @@ public:
 					day = D;							//sets day as input value
 				}
 				else {									//outputs error message and resets day value
-					std::cerr << "Invalid Day, the selected month has 31 days" << std::endl;
+					cout << "Invalid Day, the selected month has 31 days" << endl;
 					day = 1;
 				}
 			}
@@ -68,7 +65,7 @@ public:
 			year = Y;									//sets year as input value
 		}
 		else {											//outputs error message and resets year value
-			std::cerr << "Invalid Year, please enter a value of 1900 or above" << std::endl;
+			cout << "Invalid Year, please enter a value of 1900 or above" << endl;
 			year = 1900;
 		}
 
@@ -83,7 +80,7 @@ public:
 		return year;									//returns current year
 	}
 	void print() {										//prints date in correct format
-		std::cerr << day << "-" << month << "-" << year << endl;
+		cout << day << "-" << month << "-" << year << endl;
 	}
 	bool isLeapYear(int Y) {
 		if (Y % 4 == 0) {								//checks if the year is evenly divisible by 4
@@ -110,6 +107,4 @@ private:
 	int day;
 	int year;
 };
-
-#endif
 
