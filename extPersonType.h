@@ -5,13 +5,15 @@
 #include "addressType.h"
 #include "personType.h"
 
-class extPersonType :personType {
+using namespace std;
+
+class extPersonType : public personType {
 public:
 	extPersonType() {														//constructor
 		phoneNumber = "";													//sets default phoneNumber as  ""
 		relationship = "";													//sets default relationship as ""
 	}
-	extPersonType(std::string F, std::string L, int M, int D, int Y, std::string A, std::string C, std::string S, int Z, std::string P, std::string R) {
+	extPersonType(string F, string L, int M, int D, int Y, string A, string C, string S, string Z, string P, string R) {
 		setFirstName(F);													//calls member function setFirstName
 		setLastName(L);														//calls member function setLastName
 		address.setAddress(A);												//calls the addressType member function setAddress
@@ -24,7 +26,7 @@ public:
 	}
 	void setPhoneNumber(std::string N) {									//uses one string as a formal parameter
 		phoneNumber = N;													//sets phoneNumber as the parameter N
-	}	
+	}
 	std::string getPhoneNumber() {											//has no formal parameters
 		return phoneNumber;													//returns the current value for phoneNumber
 	}
@@ -50,12 +52,11 @@ public:
 		std::cerr << phoneNumber << std::endl << relationship << std::endl;	//prints phoneNumber, endl, relationship, endl
 
 	}
-private:
 	addressType address;
 	dateType birthday;
+private:
 	std::string phoneNumber;
 	std::string relationship;
 };
-
 
 

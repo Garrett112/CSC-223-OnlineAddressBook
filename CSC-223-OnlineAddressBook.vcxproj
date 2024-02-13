@@ -135,6 +135,7 @@
     <ClCompile Include="extPersonType.cpp" />
     <ClCompile Include="Module.ixx" />
     <ClCompile Include="personType.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="addressBookType.h" />
@@ -144,6 +145,9 @@
     <ClInclude Include="extPersonType.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="personType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="AddressBookData.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
